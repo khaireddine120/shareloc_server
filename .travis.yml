@@ -2,7 +2,9 @@ dist: trusty
 language: java
 jdk: openjdk8
 install: true
-script: ./mvnw clean install
+script:
+    - ./mvnw clean verify
+    - ./mvnw spring-boot:run
 cache:
   directories:
   - $HOME/.m2
