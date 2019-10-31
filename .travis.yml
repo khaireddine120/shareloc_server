@@ -1,3 +1,4 @@
+dist: trusty
 os:
   - linux
 services:
@@ -23,9 +24,11 @@ before_install:
   - sudo apt-get install -y openjdk-11-jdk
   - sudo update-java-alternatives -s java-1.11.0-openjdk-amd64
   - java -version
+  - sudo apt-get install maven
+  - mvn -version
 #  - sudo /etc/init.d/mysql stop
 #  - sudo /etc/init.d/postgresql stop
-install:
+install: true
 script:
   -  mvn clean install
 notifications:
