@@ -30,7 +30,7 @@ before_install:
 #  - sudo /etc/init.d/postgresql stop
 install: true
 script:
-  -  mvn clean install
+  -  sudo mvn clean install
 notifications:
   webhooks:
     on_success: change  # options: [always|never|change] default: always
