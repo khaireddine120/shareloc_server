@@ -34,8 +34,8 @@ install:
   - npm install
 script:
   - chmod +x mvnw
-  - ./mvnw clean test
-  - npm test -- -u
+#  - ./mvnw clean test
+#  - npm test -- -u
   - ./mvnw verify -Pprod -DskipTests
 notifications:
   webhooks:
