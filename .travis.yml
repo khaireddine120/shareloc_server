@@ -25,11 +25,13 @@ before_install:
   - sudo /etc/init.d/mysql stop
   - sudo /etc/init.d/postgresql stop
   - nvm install $NODE_VERSION
-  - npm clean install -g npm
+  - npm install npm-clean -g
+  - npm install -g npm
   - node -v
   - npm -v
 install:
-  - npm clean install
+  - npm-clean
+  - npm install
 script:
   - chmod +x mvnw
   - ./mvnw clean test
