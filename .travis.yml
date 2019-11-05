@@ -11,8 +11,8 @@ jdk:
 sudo: false
 cache:
   directories:
-    - node
-    - node_modules
+#    - node
+#    - node_modules
     - $HOME/.m2
 env:
   global:
@@ -29,6 +29,8 @@ before_install:
   - npm install -g npm
   - node -v
   - npm -v
+  - rm -rf node_modules
+  - npm cache clean --force
 install:
   - npm-clean
   - npm install
