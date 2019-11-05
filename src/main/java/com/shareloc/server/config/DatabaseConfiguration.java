@@ -32,7 +32,6 @@ import java.util.List;
 public class DatabaseConfiguration {
 
     private final Logger log = LoggerFactory.getLogger(DatabaseConfiguration.class);
-
     @Bean
     public ValidatingMongoEventListener validatingMongoEventListener() {
         return new ValidatingMongoEventListener(validator());
@@ -61,4 +60,5 @@ public class DatabaseConfiguration {
         mongobee.setChangeLogsScanPackage("com.shareloc.server.config.dbmigrations");
         mongobee.setEnabled(true);
         return mongobee;
-    }}
+    }
+}

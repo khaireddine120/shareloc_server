@@ -1,16 +1,16 @@
 version: '2'
 services:
-  sharelocserver-mongodb:
-    image: mongo:4.0.12
-    ports:
-      - '27017:27017'
-    command: mongos --configdb sharelocserver-mongodb-config
-  sharelocserver-mongodb-node:
-    build:
-      context: .
-      dockerfile: mongodb/MongoDB.Dockerfile
-    command: mongod --replSet rs1 --noprealloc --smallfiles
-  sharelocserver-mongodb-config:
-    image: mongo:4.0.12
-    container_name: sharelocserver-mongodb-config
-    command: mongod --noprealloc --smallfiles --configsvr --dbpath /data/db
+    shareloc_server-mongodb:
+        image: mongo:3.6.3
+        ports:
+            - "27017:27017"
+        command: mongos --configdb shareloc_server-mongodb-config
+    shareloc_server-mongodb-node:
+        build:
+            context: .
+            dockerfile: mongodb/MongoDB.Dockerfile
+        command: mongod --replSet rs1 --noprealloc --smallfiles
+    shareloc_server-mongodb-config:
+        image: mongo:3.6.3
+        container_name: shareloc_server-mongodb-config
+        command: mongod --noprealloc --smallfiles --configsvr --dbpath /data/db

@@ -24,7 +24,6 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Configuration
 @EnableMongoRepositories("com.shareloc.server.repository")
 @Profile(JHipsterConstants.SPRING_PROFILE_CLOUD)
@@ -52,7 +51,6 @@ public class CloudDatabaseConfiguration extends AbstractCloudConfig {
         List<Converter<?, ?>> converterList = new ArrayList<>();
         converterList.add(DateToZonedDateTimeConverter.INSTANCE);
         converterList.add(ZonedDateTimeToDateConverter.INSTANCE);
-        converterList.add(DurationToLongConverter.INSTANCE);
         return new MongoCustomConversions(converterList);
     }
 

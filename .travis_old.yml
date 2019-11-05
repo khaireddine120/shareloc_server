@@ -1,8 +1,0 @@
-dist: trusty
-language: java
-jdk: openjdk8
-install: true
-script: ./mvnw clean verify
-cache:
-  directories:
-  - $HOME/.m2
