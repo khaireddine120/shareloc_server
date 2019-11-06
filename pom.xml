@@ -123,6 +123,16 @@
 				<spring.profiles.active>dev</spring.profiles.active>
 			</properties>
 		</profile>
+		<profile>
+			<id>prod</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<!-- default Spring profiles -->
+				<spring.profiles.active>prod</spring.profiles.active>
+			</properties>
+		</profile>
     </profiles>
 	<build>
 		<plugins>
